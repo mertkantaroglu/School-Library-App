@@ -1,16 +1,7 @@
-
-## Getting Started
-
-This project will build the decode of morse message.
-
-<a name="readme-top"></a>
-
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Enumerables ](#-enumerables-)
+- [📖 School Library App ](#-school-library-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -18,9 +9,10 @@ This project will build the decode of morse message.
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites ](#prerequisites-)
     - [Setup ](#setup-)
+    - [Install ](#install-)
+    - [Usage ](#usage-)
   - [👥 Authors ](#-authors-)
     - [👤 **Mert Kantaroglu**](#-mert-kantaroglu)
-    - [👤 **Nezerwa Eligrand**](#-nezerwa-eligrand)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
@@ -29,9 +21,9 @@ This project will build the decode of morse message.
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Enumerables <a name="about-project"></a>
+# 📖 School Library App <a name="about-project"></a>
 
-**Enumerables** will help checking if the input satisfy enumerable conditions.
+**School Library App** is an app designed with Ruby where you can add teachers, students, books and see books' borrowing records.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -48,7 +40,7 @@ This project will build the decode of morse message.
 
 ### Key Features <a name="key-features"></a>
 
-- **Homepage**
+- **Library Record Keeping**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -66,27 +58,32 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites <a name="prerequisites"></a>
 
-In order to run this project you need a Chrome, Safari or Mozilla browser
+In order to run this project you need the following installed in your local system
+
+- Ruby
+- Git CLI
+- Github account
 
 ### Setup <a name="setup"></a>
 
 Clone this repository to your desired folder:
 
-Example commands:
-
 ```sh
   cd <desired-folder>
-  git clone https://github.com/mertkantaroglu/Enumarable.git
-  cd Enumarable
+  git clone https://github.com/mertkantaroglu/School-Library-App.git
 ```
 
-In order to run this project you need:
-- Ruby installer
-
-Example command:
+### Install <a name="install"></a>
 
 ```sh
- gem install rails
+  cd School-Library-App
+  bundle install
+```
+
+### Usage <a name="usage"></a>
+
+```sh
+  ruby person.rb
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -101,20 +98,13 @@ Example command:
 - Twitter: [@aranelluinwe](https://twitter.com/aranelluinwe)
 - LinkedIn: [mertkantaroglu](https://www.linkedin.com/in/mert-kantaroglu/)
 
-
-### 👤 **Nezerwa Eligrand**
-
-- GitHub: [@nezerwa](https://github.com/nezerwa/)
-- Twitter: [@eligrand](https://twitter.com/eligrand1)
-- LinkedIn: [eligrand-nezerwa](https://www.linkedin.com/in/eligrand-nezerwa/)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] Creating personal enumerable commands
+- [ ] Creating advanced UI
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -132,7 +122,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project please give me a star.
+If you like this project please give me a Star!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
