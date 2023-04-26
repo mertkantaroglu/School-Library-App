@@ -2,16 +2,18 @@ require_relative 'nameable'
 require_relative 'decorator'
 require_relative 'capitalize_decorator'
 require_relative 'trimmer_decorator'
+require_relative 'rental'
 
 class Person < Nameable
   attr_reader :id
-  attr_accessor :name, :age, :parent_permission
+  attr_accessor :name, :age, :parent_permission, :rentals
 
   def initialize(age, name: 'Unknown', parent_permission: true)
     @id = Random.rand(1..1000)
     @age = age
     @name = name
     @parent_permission = parent_permission
+    @rentals = []
     super()
   end
 
@@ -31,6 +33,10 @@ class Person < Nameable
     return true if age >= 18
 
     false
+  end
+
+  def add_rental(book, date)
+    Rental.new(date, book, self)
   end
 end
 
