@@ -77,22 +77,30 @@ class App
     puts 'Book created successfully'
   end
 
-  # Create new rental
-  def create_rental
-    puts 'Select a book index from the following list by number: '
-    book_list
-    book_index = gets.chomp.to_i
-    rented_book = @books[book_index]
-    puts 'Select a person index from the following list by number (not id): '
-    people_list
-    person_index = gets.chomp.to_i
-    renter = @people[person_index]
-    puts 'Enter a date as (YYYY-MM-DD): '
-    date = gets.chomp
+# Create new rental
+def select_book
+  book_list
+  puts 'Select a book index from the above list by number: '
+  book_index = gets.chomp.to_i
+  @books[book_index]
+end
 
-    @rentals.push Rental.new(date, rented_book, renter)
-    puts 'Rental created successfully'
-  end
+def select_person
+  people_list
+  puts 'Select a person index from the above list by number: '
+  person_index = gets.chomp.to_i
+  @people[person_index]
+end
+
+def create_rental
+  rented_book = select_book
+  renter = select_person
+  puts 'Enter a date as (YYYY-MM-DD): '
+  date = gets.chomp
+  @rentals.push Rental.new(date, rented_book, renter)
+  puts 'Rental created successfully'
+end
+
 
   # Check rental list
   def rental_list
