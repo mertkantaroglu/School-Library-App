@@ -17,16 +17,16 @@ class App
 
   # Create book list
   def book_list
-      puts 'There are no books in the list' if @books.empty?
-      @books.each_with_index do |book, index|
+    puts 'There are no books in the list' if @books.empty?
+    @books.each_with_index do |book, index|
       puts "#{index} - Title: #{book.title.capitalize}, Author: #{book.author.capitalize}"
     end
   end
 
   # Create people list
   def people_list
-      puts 'There are no people in the list' if @people.empty?
-      @people.each_with_index do |person, index|
+    puts 'There are no people in the list' if @people.empty?
+    @people.each_with_index do |person, index|
       puts "#{index} - [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
   end
@@ -77,30 +77,29 @@ class App
     puts 'Book created successfully'
   end
 
-# Create new rental
-def select_book
-  book_list
-  puts 'Select a book index from the above list by number: '
-  book_index = gets.chomp.to_i
-  @books[book_index]
-end
+  # Create new rental
+  def select_book
+    book_list
+    puts 'Select a book index from the above list by number: '
+    book_index = gets.chomp.to_i
+    @books[book_index]
+  end
 
-def select_person
-  people_list
-  puts 'Select a person index from the above list by number: '
-  person_index = gets.chomp.to_i
-  @people[person_index]
-end
+  def select_person
+    people_list
+    puts 'Select a person index from the above list by number: '
+    person_index = gets.chomp.to_i
+    @people[person_index]
+  end
 
-def create_rental
-  rented_book = select_book
-  renter = select_person
-  puts 'Enter a date as (YYYY-MM-DD): '
-  date = gets.chomp
-  @rentals.push Rental.new(date, rented_book, renter)
-  puts 'Rental created successfully'
-end
-
+  def create_rental
+    rented_book = select_book
+    renter = select_person
+    puts 'Enter a date as (YYYY-MM-DD): '
+    date = gets.chomp
+    @rentals.push Rental.new(date, rented_book, renter)
+    puts 'Rental created successfully'
+  end
 
   # Check rental list
   def rental_list
