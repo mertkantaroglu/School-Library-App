@@ -13,7 +13,7 @@ class App
   def initialize
     @people = read_data('./data/people.json')
     @books = read_data('./data/books.json')
-    @rentals = []
+    @rentals = read_data('./data/rentals.json')
   end
 
   # Create book list
