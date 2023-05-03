@@ -1,7 +1,7 @@
 require 'json'
 
 def write_data(obj, filename)
-  json_data = JSON.generate(obj.map { |item| item.to_h })
+  json_data = JSON.generate(obj.map(&:to_h))
   File.write(filename, json_data)
 end
 
