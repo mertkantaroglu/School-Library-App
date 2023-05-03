@@ -103,22 +103,28 @@ class App
     renter = select_person
     puts 'Enter a date as (YYYY-MM-DD): '
     date = gets.chomp
+
     @rentals.push Rental.new(date, rented_book, renter)
+    write_data(@rentals, './data/rentals.json')
     puts 'Rental created successfully'
   end
 
-  # Check rental list
   def rental_list
+    @rentals = read_data('./data/rentals.json') || []
     people_list
     puts 'Enter ID of person: '
     renter_id = gets.chomp.to_i
 
-    renter = @people.select { |person| person.id == renter_id }
-    if @rentals.empty?
+    if @rentals.nil? || @rentals.empty?
       puts 'Rental is empty'
     else
-      renter.first.rentals.map do |rental|
-        puts "Rental date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
+      rentals_for_person = @rentals.select { |rental| rental['person']['id'] == renter_id }
+      if rentals_for_person.empty?
+        puts 'No rentals found for the given person'
+      else
+        rentals_for_person.each do |rental|
+          puts "Rental date: #{rental['date']}, Book: #{rental['book']['title']} by #{rental['book']['author']}"
+        end
       end
     end
   end
