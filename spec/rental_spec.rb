@@ -3,21 +3,21 @@ require './person'
 
 describe Rental do
   context 'Tracking rental information' do
-    book_1 = Book.new('LOTR', 'Tolkien')
-    book_2 = Book.new('Shibumi', 'Grange')
-    person_1 = Person.new(505, 'Josue')
-    person_2 = Person.new(222, 'Mert')
-    rental_1 = Rental.new('2020-20-20', book_1, person_1)
-    rental_2 = Rental.new('2000-02-02', book_2, person_2)
-    rental_3 = Rental.new('1980-08-08', book_2, person_1)
+    book_one = Book.new('LOTR', 'Tolkien')
+    book_two = Book.new('Shibumi', 'Grange')
+    person_one = Person.new(505, 'Josue')
+    person_two = Person.new(222, 'Mert')
+    rental_one = Rental.new('2020-20-20', book_one, person_one)
+    rental_two = Rental.new('2000-02-02', book_two, person_two)
+    rental_three = Rental.new('1980-08-08', book_two, person_one)
     it 'creates and checks rentals' do
-      expect(rental_1).to be_a Rental
-      expect(person_2.rentals.length).to eql 1
-      expect(book_2.rentals.length).to eql 2
-      expect(rental_1.date).to eql '2020-20-20'
-      expect(book_2.title).to eql 'Shibumi'
-      expect(person_1.rentals).to include rental_1 && rental_3
-      expect(person_2.rentals).to include rental_2
+      expect(rental_one).to be_a Rental
+      expect(person_two.rentals.length).to eql 1
+      expect(book_two.rentals.length).to eql 2
+      expect(rental_one.date).to eql '2020-20-20'
+      expect(book_two.title).to eql 'Shibumi'
+      expect(person_one.rentals).to include rental_one && rental_three
+      expect(person_two.rentals).to include rental_two
     end
   end
 end
