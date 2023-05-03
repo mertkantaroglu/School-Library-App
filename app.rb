@@ -115,10 +115,13 @@ class App
     puts 'Enter ID of person: '
     renter_id = gets.chomp.to_i
 
-    if @rentals.nil? || @rentals.empty?
+    if rentals_empty?
       puts 'Rental is empty'
     else
-      rentals_for_person = @rentals.select { |rental| rental['person']['id'] == renter_id }
+      rentals_for_person = @rentals.select do |rental|
+        rental_for_person?(rental, renter_id)
+      end
+
       if rentals_for_person.empty?
         puts 'No rentals found for the given person'
       else
@@ -127,5 +130,13 @@ class App
         end
       end
     end
+  end
+
+  def rentals_empty?
+    @rentals.nil? || @rentals.empty?
+  end
+
+  def rental_for_person?(rental, renter_id)
+    rental['person'] && rental['person']['id'] == renter_id && rental['book']
   end
 end
