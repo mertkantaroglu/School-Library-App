@@ -13,5 +13,19 @@ describe Teacher do
     it 'checks teacher can use services?' do
       expect(teacher.can_use_services?).to eql true
     end
+
+    it 'returns a hash representation of the teacher' do
+      teacher = Teacher.new('Web Dev', 40, 'Mert')
+
+      expected_hash = {
+        id: teacher.instance_variable_get(:@id),
+        age: 40,
+        name: 'Mert',
+        specialization: 'Web Dev',
+        rentals: []
+      }
+
+      expect(teacher.to_h).to eq(expected_hash)
+    end
   end
 end
